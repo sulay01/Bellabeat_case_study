@@ -127,6 +127,7 @@ ggplot(merged_data, aes(x=Day, y=TotalMinutesAsleep)) +
 
 Bellabeat can enhance user engagement by tailoring marketing campaigns based on user activity patterns and promoting features related to sleep tracking and activity monitoring.
 
+
 ## README_2 Addtional Bellabeat CASE_STUDY 
 By Sulay Cay 05-Jan-2025
 
@@ -211,24 +212,25 @@ This line graph captures daily trends in total steps, calories burned, sedentary
 
 ---
 
-## R Code for Analysis and Visualizations
+## Updated R Code for Analysis and Visualizations
 
 ```R
 # Load necessary libraries
 library(ggplot2)
 library(dplyr)
+library(readr)
 
 # Load datasets
-daily_activity <- read.csv("datasets/dailyActivity_merged.csv")
-daily_calories <- read.csv("datasets/dailyCalories_merged.csv")
-daily_steps <- read.csv("datasets/dailySteps_merged.csv")
-daily_intensities <- read.csv("datasets/dailyIntensities_merged.csv")
+daily_activity <- read_csv("datasets/dailyActivity_merged.csv")
+daily_calories <- read_csv("datasets/dailyCalories_merged.csv")
+daily_steps <- read_csv("datasets/dailySteps_merged.csv")
+daily_intensities <- read_csv("datasets/dailyIntensities_merged.csv")
 
 # Merge datasets
 merged_data <- daily_activity %>%
-  inner_join(daily_calories, by = c("Id", "ActivityDay")) %>%
-  inner_join(daily_steps, by = c("Id", "ActivityDay")) %>%
-  inner_join(daily_intensities, by = c("Id", "ActivityDay"))
+  inner_join(daily_calories, by = c("Id", "ActivityDate")) %>%
+  inner_join(daily_steps, by = c("Id", "ActivityDate")) %>%
+  inner_join(daily_intensities, by = c("Id", "ActivityDate"))
 
 # Visualization 1: Steps vs Calories
 steps_calories_plot <- ggplot(merged_data, aes(x = TotalSteps, y = Calories)) +
@@ -251,12 +253,12 @@ ggsave("outputs/sedentary_vs_active.png", sedentary_active_plot)
 # Visualization 3: Daily Trends
 library(tidyr)
 daily_trends <- merged_data %>%
-  group_by(ActivityDay) %>%
+  group_by(ActivityDate) %>%
   summarise(AvgSteps = mean(TotalSteps),
             AvgCalories = mean(Calories),
             AvgSedentary = mean(SedentaryMinutes),
             AvgVeryActive = mean(VeryActiveMinutes))
-daily_trends_plot <- ggplot(daily_trends, aes(x = ActivityDay)) +
+daily_trends_plot <- ggplot(daily_trends, aes(x = ActivityDate)) +
   geom_line(aes(y = AvgSteps, color = "Steps")) +
   geom_line(aes(y = AvgCalories, color = "Calories")) +
   geom_line(aes(y = AvgSedentary, color = "Sedentary Minutes")) +
