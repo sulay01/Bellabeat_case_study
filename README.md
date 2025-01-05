@@ -349,5 +349,5 @@ The PowerPoint presentation provides a visual summary of the Bellabeat case stud
 3. Visualizations of steps vs. calories burned, sedentary vs. active minutes, and daily trends.
 4. Recommendations for Bellabeat’s app and marketing strategies.
 
-You can access the presentation [here](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Presentation_.pptx).
+You can access the presentation and make sure you hit view raw data  [here](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Presentation_.pptx).
 
