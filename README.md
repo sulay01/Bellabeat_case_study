@@ -314,7 +314,7 @@ ggsave("outputs/daily_trends.png", daily_trends_plot)
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/YourUsername/Bellabeat-Case-Study.git
+   git clone [https://github.com/sulay01/Bellabeat_case_study]
    ```
 
 2. Open the R Markdown file `Bellabeat_Case_Study.Rmd` in RStudio.
