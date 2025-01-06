@@ -270,6 +270,11 @@ daily_trends_plot <- ggplot(daily_trends, aes(x = ActivityDate)) +
 ggsave("outputs/daily_trends.png", daily_trends_plot)
 ```
 
+
+## Daily Trends in Activity :
+
+(https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20in%20Activity%20.pdf)
+
 ---
 
 ## Key Insights
