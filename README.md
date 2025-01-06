@@ -225,7 +225,7 @@ The PowerPoint presentations summarizes the case study findings and includes vis
 
 
 ---
-# Title Bellabeat Case-Study-Karemelshimi
+# Title Bellabeat Case-Study
 
 ## Reference
 
@@ -633,7 +633,7 @@ By using the wellnees tracker bellabeat can gather data to know their user's beh
 ---
 
 
-# Bellabeat-Data-Analysis-Case-Study-xgabrielex
+# Bellabeat-Data-Analysis-Case-Study
 
 Bellabeat is a wellness brand for women with a variety of products and services focused on women’s health. The company develops wearables and accompanying products that monitor biometric and lifestyle data to help women better understand how their bodies work and make healthier choices. Since it was founded in 2013, Bellabeat has grown rapidly and quickly positioned itself as a tech-driven wellness company for women. By 2016, Bellabeat had opened offices around the world and launched multiple products. Bellabeat products became available through a growing number of online retailers in addition to their own e-commerce channel on their website. The company has invested in traditional advertising media, such as radio, out-of-home billboards, print, and television, but focuses on digital marketing extensively.(https://bellabeat.com/)
 
