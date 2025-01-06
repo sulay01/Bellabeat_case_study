@@ -214,13 +214,9 @@ The PowerPoint presentations summarizes the case study findings and includes vis
 1. [View the PowerPoint Presentation](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Complete_Presentation%20(Orange)(1).pptx)
 
 
-2. [View the PowerPoint Presentation] (https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Presentation_%20(2).pptx)
-
-   
+2.  [View the PowerPoint Presentation](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Presentation_%20(2).pptx)
 
 
-
----
 
 
 ---
