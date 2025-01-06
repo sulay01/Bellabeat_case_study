@@ -1,377 +1,227 @@
-# Bellabeat-Case-Study-for-Data-Analysis-GOOGLE Data Analytics Professional -Cap Stone 
+# Bellabeat Case Study: Google Data Analytics Capstone
 
-# Title Bellabeat-Case-Study-1 
-Author Sulay Cay
-Date 05-Jan-2025
-
-Bellabeat How can a wellness company play it smart?
-Welcome to the Bellabeat Case Study repository! This project is part of the Google Data Analytics Professional Certificate program, showcasing data analysis and visualization skills using R programming. The focus is on analyzing smart device data to provide insights for Bellabeat, a high-tech manufacturer of health-focused products for women.
+**Author**: Sulay Cay  
+**Date**: 05-Jan-2025  
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Business Task](#business-task)
-- [Dataset](#dataset)
-- [Tools Used](#tools-used)
-- [Analysis Steps](#analysis-steps)
-  - [1. Data Cleaning](#1-data-cleaning)
-  - [2. Data Analysis](#2-data-analysis)
-  - [3. Data Visualization](#3-data-visualization)
-- [Key Insights](#key-insights)
-- [Conclusion](#conclusion)
+
+1. [Introduction](#introduction)  
+2. [Business Task](#business-task)  
+3. [Dataset](#dataset)  
+4. [Tools Used](#tools-used)  
+5. [Analysis Steps](#analysis-steps)  
+    - Data Cleaning  
+    - Data Analysis  
+    - Data Visualization  
+6. [Visualizations](#visualizations)  
+7. [Key Insights](#key-insights)  
+8. [Recommendations](#recommendations)  
+9. [How to Run the Analysis](#how-to-run-the-analysis)  
+10. [Conclusion](#conclusion)  
+11. [Presentation](#presentation)  
 
 ---
 
 ## Introduction
 
-Bellabeat is a health-focused technology company that designs smart devices to track activity, sleep, stress, and more. This case study analyzes data to uncover trends and provide actionable insights for Bellabeat's marketing and product development.
+Bellabeat is a health-focused technology company that designs smart devices to track activity, sleep, stress, and more. This case study analyzes user activity data to uncover trends and provide actionable insights for Bellabeat’s marketing and product development.
+
+---
 
 ## Business Task
 
-The main objective is to analyze user activity data from smart devices to identify patterns that can guide Bellabeat's business strategy.
+The goal is to analyze trends in user activity data collected by fitness trackers. The insights will help Bellabeat improve customer engagement and refine marketing strategies.
+
+---
 
 ## Dataset
 
-The dataset used in this case study comes from public domain fitness tracker data. It contains information on daily activity, sleep patterns, and heart rates.
+**Source**: [Fitbit Fitness Tracker Data (CC0)](https://www.kaggle.com/datasets/arashnic/fitbit)  
+**Files Used**:  
+- `dailyActivity_merged.csv`  
+- `dailyCalories_merged.csv`  
+- `dailySteps_merged.csv`  
+- `dailyIntensities_merged.csv`  
+- `sleepDay_merged.csv`
 
-- **Source**: [Dataset on Kaggle or other source]
-- **Files Used**: 
-  - `dailyActivity.csv`
-  - `sleepDay.csv`
-  - `weightLogInfo.csv`
+---
 
 ## Tools Used
 
-- **Programming Language**: R
-- **Libraries**: 
-  - `tidyverse`
-  - `ggplot2`
-  - `lubridate`
-  - `dplyr`
+- **Programming Language**: R  
+- **Libraries**: `tidyverse`, `ggplot2`, `lubridate`, `dplyr`, `readr`
+
+---
 
 ## Analysis Steps
 
-### 1. Data Cleaning
+### Data Cleaning
+- Removed duplicates and missing data.
+- Merged datasets on common keys (`Id` and `ActivityDate`).
+- Ensured consistent formatting for dates and numerical columns.
 
-```r
-# Load libraries
-library(tidyverse)
-library(lubridate)
+### Data Analysis
+- Calculated daily averages for key metrics like steps, calories, and sleep duration.
+- Identified correlations between activity levels and calorie burn.
+- Explored relationships between sedentary behavior and active minutes.
 
-# Load data
-activity_data <- read.csv("dailyActivity.csv")
-sleep_data <- read.csv("sleepDay.csv")
-weight_data <- read.csv("weightLogInfo.csv")
-
-# Data cleaning
-activity_data <- activity_data %>%
-  select(-ActivityId) %>%
-  mutate(ActivityDate = as.Date(ActivityDate, format="%m/%d/%Y"))
-
-sleep_data <- sleep_data %>%
-  mutate(SleepDay = as.Date(SleepDay, format="%m/%d/%Y"))
-
-weight_data <- weight_data %>%
-  filter(!is.na(WeightKg))
-
-# Combine datasets
-merged_data <- activity_data %>%
-  left_join(sleep_data, by = c("Id" = "Id")) %>%
-  left_join(weight_data, by = c("Id" = "Id"))
-```
-
-### 2. Data Analysis
-
-```r
-# Summary statistics
-summary(merged_data)
-
-# Correlation between steps and sleep
-correlation <- cor(merged_data$TotalSteps, merged_data$TotalMinutesAsleep, use="complete.obs")
-correlation
-```
-
-### 3. Data Visualization
-
-#### Steps vs. Calories Burned
-```r
-library(ggplot2)
-
-# Plot
-ggplot(merged_data, aes(x=TotalSteps, y=Calories)) +
-  geom_point(alpha=0.6, color="blue") +
-  geom_smooth(method="lm", color="red") +
-  labs(title="Steps vs. Calories Burned",
-       x="Total Steps",
-       y="Calories Burned")
-```
-
-#### Sleep Patterns
-```r
-# Sleep patterns by day of the week
-merged_data$Day <- weekdays(merged_data$SleepDay)
-
-ggplot(merged_data, aes(x=Day, y=TotalMinutesAsleep)) +
-  geom_boxplot(fill="skyblue") +
-  labs(title="Sleep Patterns by Day of the Week",
-       x="Day of the Week",
-       y="Total Minutes Asleep")
-```
+### Data Visualization
+- Created scatterplots, boxplots, and bar graphs to visualize trends and patterns.
 
 ---
 
-## Key Insights
+## Visualizations
 
-1. **Correlation**: Positive correlation between daily steps and calories burned.
-2. **Sleep Trends**: Users tend to sleep longer on weekends compared to weekdays.
-3. **Activity Levels**: High activity levels correlate with higher calorie burn.
+### 1. Total Steps vs Calories Burned  
+**Explanation**: This scatterplot highlights the positive correlation between total steps taken and calories burned. Users who take more steps consistently burn more calories.
 
-## Conclusion
-
-Bellabeat can enhance user engagement by tailoring marketing campaigns based on user activity patterns and promoting features related to sleep tracking and activity monitoring.
-
-
-# Title Bellabeat Case-Study 2
-By Sulay Cay 
-Date 05-Jan-2025
-
-
-This repository contains the analysis, visualizations, and recommendations for the Bellabeat smart device data case study. The purpose of this study is to uncover trends in user activity, calorie expenditure, and behavioral patterns, providing actionable insights to refine Bellabeat's marketing strategies and empower users to lead healthier lives.
-
----
-
-## Objective
-
-The primary goal of this case study is to analyze trends in smart device usage to inform Bellabeat's product development and marketing strategy.
-
-Key Questions:
-
-1. What are the trends in smart device usage?
-2. How do these trends relate to Bellabeat’s customers?
-3. How can Bellabeat use these trends to improve user engagement and refine its marketing strategies?
-
----
-
-## Repository Structure
-
-```
-Bellabeat-Case-Study/
-|-- README.md                   # Project overview and summary
-|-- Bellabeat_Case_Study.Rmd    # Full analysis in R Markdown
-|-- datasets/                   # Folder for datasets
-|   |-- dailyActivity_merged.csv
-|   |-- dailyCalories_merged.csv
-|   |-- dailySteps_merged.csv
-|   |-- dailyIntensities_merged.csv
-|-- outputs/                    # Visualizations and charts
-|   |-- steps_vs_calories.png
-|   |-- sedentary_vs_active.png
-|   |-- daily_trends.png
-|-- presentation/               # PowerPoint presentation
-|   |-- Bellabeat_Case_Study_Presentation.pptx
-```
-
----
-
-## Visualizations and Explanations
-
-### Total Steps vs Calories Burned
-
-This chart highlights the positive correlation between total steps taken and calories burned. Users who are more active consistently burn more calories.
-
-(https://github.com/sulay01/Bellabeat_case_study/blob/main/Total%20Steps%20vs%20Calories%20Burned.pdf)
-
-**Explanation**:
-
-- The graph shows a direct relationship between activity levels and calorie expenditure.
-- Encouraging users to set daily step goals can promote increased activity and better calorie management.
-
----
-
-### Sedentary Minutes vs Very Active Minutes
-
-This visualization shows an inverse relationship between sedentary minutes and very active minutes, emphasizing the need for users to reduce sedentary time to improve overall health.
-
-(https://github.com/sulay01/Bellabeat_case_study/blob/main/Sedentary%20Minutes%20vs%20Very%20Active%20Minutes%20(Filtered).pdf)
-
-- Users with high sedentary minutes tend to have fewer very active minutes.
-- Features like "move reminders" or gamification can encourage users to stay active throughout the day.
-
----
-
-### Daily Trends in Activity Bar Graph #1 
-
-This line graph captures daily trends in total steps, calories burned, sedentary minutes, and very active minutes, providing insights into user behavior over time.
-
-(https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20Steps%20and%20Calories%20.pdf)
-
-### Daily Trends in Activity Bar Graph #2:
-
-(https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20in%20Activity%20.pdf)
-
-**Explanation**:
-
-- Peaks in very active minutes align with higher calorie burn.
-- Sedentary behavior remains consistent, highlighting areas for improvement in user habits.
-- Suggests opportunities for Bellabeat to engage users during low-activity periods.
-
----
-
-## Updated R Code for Analysis and Visualizations
+![Steps vs Calories](outputs/steps_vs_calories.png)
 
 ```R
-# Load necessary libraries
-library(ggplot2)
-library(dplyr)
-library(readr)
-
-# Load datasets
-daily_activity <- read_csv("datasets/dailyActivity_merged.csv")
-daily_calories <- read_csv("datasets/dailyCalories_merged.csv")
-daily_steps <- read_csv("datasets/dailySteps_merged.csv")
-daily_intensities <- read_csv("datasets/dailyIntensities_merged.csv")
-
-# Merge datasets
-merged_data <- daily_activity %>%
-  inner_join(daily_calories, by = c("Id", "ActivityDate")) %>%
-  inner_join(daily_steps, by = c("Id", "ActivityDate")) %>%
-  inner_join(daily_intensities, by = c("Id", "ActivityDate"))
-
-# Visualization 1: Steps vs Calories
+# Steps vs Calories Burned
 steps_calories_plot <- ggplot(merged_data, aes(x = TotalSteps, y = Calories)) +
   geom_point(color = "blue") +
   labs(title = "Total Steps vs Calories Burned",
        x = "Total Steps",
        y = "Calories Burned") +
   theme_minimal()
-ggsave("outputs/steps_vs_calories.png", steps_calories_plot)
+ggsave("outputs/steps_vs_calories.png", steps_calories_plot, dpi = 300)
+```
 
-# Visualization 2: Sedentary vs Active Minutes
+---
+
+### 2. Sedentary Minutes vs Very Active Minutes  
+**Explanation**: This scatterplot shows an inverse relationship between sedentary minutes and very active minutes. Encouraging users to reduce sedentary time can improve overall activity levels.
+
+![Sedentary vs Active Minutes](outputs/sedentary_vs_active.png)
+
+```R
+# Sedentary Minutes vs Very Active Minutes
 sedentary_active_plot <- ggplot(merged_data, aes(x = SedentaryMinutes, y = VeryActiveMinutes)) +
   geom_point(color = "green") +
   labs(title = "Sedentary Minutes vs Very Active Minutes",
        x = "Sedentary Minutes",
        y = "Very Active Minutes") +
   theme_minimal()
-ggsave("outputs/sedentary_vs_active.png", sedentary_active_plot)
-
-# Visualization 3: Daily Trends
-library(tidyr)
-daily_trends <- merged_data %>%
-  group_by(ActivityDate) %>%
-  summarise(AvgSteps = mean(TotalSteps),
-            AvgCalories = mean(Calories),
-            AvgSedentary = mean(SedentaryMinutes),
-            AvgVeryActive = mean(VeryActiveMinutes))
-daily_trends_plot <- ggplot(daily_trends, aes(x = ActivityDate)) +
-  geom_line(aes(y = AvgSteps, color = "Steps")) +
-  geom_line(aes(y = AvgCalories, color = "Calories")) +
-  geom_line(aes(y = AvgSedentary, color = "Sedentary Minutes")) +
-  geom_line(aes(y = AvgVeryActive, color = "Very Active Minutes")) +
-  labs(title = "Daily Trends in Activity",
-       x = "Date",
-       y = "Average Values") +
-  theme_minimal()
-ggsave("outputs/daily_trends.png", daily_trends_plot)
+ggsave("outputs/sedentary_vs_active.png", sedentary_active_plot, dpi = 300)
 ```
 
+---
+
+### 3. Daily Trends in Activity  
+**Explanation**: This bar graph shows daily trends in total steps, calories burned, sedentary minutes, and very active minutes, providing insights into user behavior over time.
+
+![Daily Trends Bar Graph](outputs/daily_trends_bargraph.png)
+
+```R
+# Daily Trends Bar Graph
+daily_trends_long <- daily_trends %>%
+  pivot_longer(cols = c(AvgSteps, AvgCalories, AvgSedentary, AvgVeryActive),
+               names_to = "Metric",
+               values_to = "Value")
+
+daily_trends_bargraph <- ggplot(daily_trends_long, aes(x = ActivityDate, y = Value, fill = Metric)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Daily Trends in Activity",
+       x = "Date",
+       y = "Average Values",
+       fill = "Metrics") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave("outputs/daily_trends_bargraph.png", daily_trends_bargraph, dpi = 300)
+```
+
+---
+
+### 4. Sleep Patterns by Day of the Week  
+**Explanation**: This boxplot visualizes total minutes asleep for each day of the week, highlighting longer sleep durations on weekends.
+
+![Sleep Patterns](outputs/sleep_patterns_by_day.png)
+
+```R
+# Sleep Patterns by Day of the Week
+sleep_pattern_plot <- ggplot(sleep_data, aes(x = DayOfWeek, y = TotalMinutesAsleep)) +
+  geom_boxplot(fill = "skyblue") +
+  labs(title = "Sleep Patterns by Day of the Week",
+       x = "Day of the Week",
+       y = "Total Minutes Asleep") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave("outputs/sleep_patterns_by_day.png", sleep_pattern_plot, dpi = 300)
+```
 
 ---
 
 ## Key Insights
 
 1. **Steps and Calories Burned**:
-
-   - Users who take more steps consistently burn more calories.
+   - Positive correlation between daily steps and calories burned.  
    - Encouraging daily step goals can promote better activity levels.
 
 2. **Sedentary vs Active Minutes**:
-
-   - High sedentary minutes correlate with reduced very active minutes.
-   - Introducing "move reminders" and gamified challenges can help reduce sedentary behavior.
+   - High sedentary minutes correlate with reduced very active minutes.  
+   - Features like "move reminders" can encourage users to stay active.
 
 3. **Daily Trends**:
+   - Peaks in very active minutes align with higher calorie burn.  
+   - Sedentary behavior remains consistent, showing potential areas for improvement.
 
-   - Peaks in active minutes align with higher calorie burn.
-   - Sedentary behavior remains consistent, highlighting an opportunity for improvement.
+4. **Sleep Patterns**:
+   - Users tend to sleep longer on weekends compared to weekdays.  
+   - Marketing campaigns can highlight the importance of sleep tracking.
 
 ---
 
 ## Recommendations
 
-1. **Personalized Activity Goals**:
-
-   - Set tailored daily step and calorie targets within the Bellabeat app to motivate users.
-
-2. **Gamified Challenges**:
-
-   - Implement engaging challenges and rewards to encourage activity and reduce sedentary time.
-
-3. **Weekly Summaries**:
-
-   - Provide weekly insights and progress reports to users, linking activity levels with health outcomes.
-
-4. **Marketing Campaigns**:
-
-   - Promote success stories and testimonials to engage users and showcase Bellabeat’s value.
+1. **Personalized Goals**: Introduce tailored daily step and calorie targets in the Bellabeat app.  
+2. **Gamification**: Use challenges and rewards to motivate users and reduce sedentary behavior.  
+3. **Weekly Summaries**: Provide users with weekly insights linking activity levels to health outcomes.  
+4. **Marketing Campaigns**: Highlight success stories to attract and retain customers.
 
 ---
 
 ## How to Run the Analysis
 
-1. Clone this repository:
-
+1. Clone this repository:  
    ```bash
    git clone [https://github.com/sulay01/Bellabeat_case_study]
    ```
 
-2. Open the R Markdown file `Bellabeat_Case_Study.Rmd` in RStudio.
+2. Open the R Markdown file:  
+   `Bellabeat_Case_Study.Rmd` in RStudio.
 
-3. Ensure the necessary libraries are installed:
-
+3. Install required libraries:  
    ```R
-   install.packages(c("ggplot2", "dplyr"))
+   install.packages(c("ggplot2", "dplyr", "tidyverse", "lubridate"))
    ```
 
-4. Knit the `.Rmd` file to generate the full report.
+4. Knit the file to generate a full report.  
 
 ---
 
 ## Conclusion
 
-By leveraging data-driven insights, Bellabeat can enhance user engagement and refine its marketing strategies. Personalized activity goals, gamification, and integrated insights provide clear pathways for growth while empowering users to lead healthier lives.
-
-Next Steps:
-
-1. Implement these recommendations within Bellabeat’s app and marketing platforms.
-2. Monitor and refine strategies based on user feedback and additional data analysis.
+By analyzing trends in smart device usage, Bellabeat can refine its marketing strategy and improve user engagement. Personalized features, gamification, and actionable insights provide a clear path to empowering users and driving company growth.
 
 ---
 
-## PowerPoint Presentation
+## Presentation
 
-The PowerPoint presentation provides a visual summary of the Bellabeat case study findings and recommendations. It includes:
+The PowerPoint presentation summarizes the case study findings and includes visualizations and actionable recommendations.  
 
-1. Overview of the analysis objectives.
-2. Key insights and trends from the data.
-3. Visualizations of steps vs. calories burned, sedentary vs. active minutes, and daily trends.
-4. Recommendations for Bellabeat’s app and marketing strategies.
-
-# You can access both Power Point presentations and make sure to click view raw :
-
-
-1: [here](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Complete_Presentation%20(Orange)(1).pptx).
-
-
-2: [here](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Presentation_%20(2).pptx)
-
-
+[View the PowerPoint Presentation](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Presentation.pptx)
 
 ---
 
 
+---
+
+###  I like Karemels findings and case study but,  I did liked many other studies, provided their findings and analhysis below- I truly see that many has giving their all to complete this study here is another case study for Bellabeat that I am sharing below:
 
 
-# Title Bellabeat Case-Study-3
+---
+# Title Bellabeat Case-Study-Karemelshimi
 
 ## Reference
 
@@ -773,13 +623,13 @@ By using the wellnees tracker bellabeat can gather data to know their user's beh
 ---
 
 
-### Not only did I like Karemels findings and case study but,  I also liked many others, one being xgabrielex provided their findings and analhysis below- I truly see that many has giving their all to complete this study here is another case study for Bellabeat that I am sharing below:
+### Not only did I like Karemels findings and case study but,  I also liked many other case studies , one being xgabrielex provided their findings and analhysis below- I truly see that many has giving their all to complete this study here is another case study for Bellabeat that I am sharing below:
 
 
 ---
 
 
-# Bellabeat-Data-Analysis-Case-Study-4
+# Bellabeat-Data-Analysis-Case-Study-xgabrielex
 
 Bellabeat is a wellness brand for women with a variety of products and services focused on women’s health. The company develops wearables and accompanying products that monitor biometric and lifestyle data to help women better understand how their bodies work and make healthier choices. Since it was founded in 2013, Bellabeat has grown rapidly and quickly positioned itself as a tech-driven wellness company for women. By 2016, Bellabeat had opened offices around the world and launched multiple products. Bellabeat products became available through a growing number of online retailers in addition to their own e-commerce channel on their website. The company has invested in traditional advertising media, such as radio, out-of-home billboards, print, and television, but focuses on digital marketing extensively.(https://bellabeat.com/)
 
