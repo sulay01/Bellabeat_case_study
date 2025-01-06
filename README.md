@@ -130,7 +130,7 @@ ggplot(merged_data, aes(x=Day, y=TotalMinutesAsleep)) +
 Bellabeat can enhance user engagement by tailoring marketing campaigns based on user activity patterns and promoting features related to sleep tracking and activity monitoring.
 
 
-## Tilte Bellabeat Case-Study 2
+# Title Bellabeat Case-Study 2
 By Sulay Cay 
 Date 05-Jan-2025
 
@@ -366,12 +366,12 @@ The PowerPoint presentation provides a visual summary of the Bellabeat case stud
 
 
 
+---
 
 
 
 
-
-### Title Bellabeat Case-Study-3
+# Title Bellabeat Case-Study-3
 
 ## Reference
 
@@ -770,9 +770,13 @@ By using the wellnees tracker bellabeat can gather data to know their user's beh
 - showing the user's their intensity counter and setting a goal for them to achive it daily.
 - Doing competitions on the app for example for hitting a max intensity or max steps and giving them a specific gift or just making it to creat a motivational environment for them to achieve what they need. Credits to findings to help with this case study as well goes to Karemel Shimi. Thank you hope you enjoyed these 3 case Studies and hope it adds value to Bellabeats ! 
 
+---
 
 
 ### Not only did I like Karemels findings and case study but,  I also liked many others, one being xgabrielex provided their findings and analhysis below- I truly see that many has giving their all to complete this study here is another case study for Bellabeat that I am sharing below:
+
+
+---
 
 
 # Bellabeat-Data-Analysis-Case-Study-4
