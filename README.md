@@ -204,6 +204,10 @@ This line graph captures daily trends in total steps, calories burned, sedentary
 
 (https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20Steps%20and%20Calories%20.pdf)
 
+## Daily Trends in Activity 2 Bar Graph chart:
+
+(https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20in%20Activity%20.pdf)
+
 **Explanation**:
 
 - Peaks in very active minutes align with higher calorie burn.
@@ -270,10 +274,6 @@ daily_trends_plot <- ggplot(daily_trends, aes(x = ActivityDate)) +
 ggsave("outputs/daily_trends.png", daily_trends_plot)
 ```
 
-
-## Daily Trends in Activity :
-
-(https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20in%20Activity%20.pdf)
 
 ---
 
