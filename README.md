@@ -75,7 +75,7 @@ The goal is to analyze trends in user activity data collected by fitness tracker
 ### 1. Total Steps vs Calories Burned  
 **Explanation**: This scatterplot highlights the positive correlation between total steps taken and calories burned. Users who take more steps consistently burn more calories.
 
-![Steps vs Calories](outputs/steps_vs_calories.png)
+(https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20Steps%20and%20Calories%20.pdf)
 
 ```R
 # Steps vs Calories Burned
@@ -93,7 +93,7 @@ ggsave("outputs/steps_vs_calories.png", steps_calories_plot, dpi = 300)
 ### 2. Sedentary Minutes vs Very Active Minutes  
 **Explanation**: This scatterplot shows an inverse relationship between sedentary minutes and very active minutes. Encouraging users to reduce sedentary time can improve overall activity levels.
 
-![Sedentary vs Active Minutes](outputs/sedentary_vs_active.png)
+(https://github.com/sulay01/Bellabeat_case_study/blob/main/Sedentary%20Minutes%20vs%20Very%20Active%20Minutes%20(Filtered).pdf)
 
 ```R
 # Sedentary Minutes vs Very Active Minutes
@@ -111,7 +111,7 @@ ggsave("outputs/sedentary_vs_active.png", sedentary_active_plot, dpi = 300)
 ### 3. Daily Trends in Activity  
 **Explanation**: This bar graph shows daily trends in total steps, calories burned, sedentary minutes, and very active minutes, providing insights into user behavior over time.
 
-![Daily Trends Bar Graph](outputs/daily_trends_bargraph.png)
+https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20in%20Activity%20.pdf
 
 ```R
 # Daily Trends Bar Graph
@@ -136,7 +136,8 @@ ggsave("outputs/daily_trends_bargraph.png", daily_trends_bargraph, dpi = 300)
 ### 4. Sleep Patterns by Day of the Week  
 **Explanation**: This boxplot visualizes total minutes asleep for each day of the week, highlighting longer sleep durations on weekends.
 
-![Sleep Patterns](outputs/sleep_patterns_by_day.png)
+https://github.com/sulay01/Bellabeat_case_study/blob/main/Sleep%20Patterns%20by%20Day%20of%20the%20Week%20Rplot.pdf
+
 
 ```R
 # Sleep Patterns by Day of the Week
@@ -208,9 +209,14 @@ By analyzing trends in smart device usage, Bellabeat can refine its marketing st
 
 ## Presentation
 
-The PowerPoint presentation summarizes the case study findings and includes visualizations and actionable recommendations.  
+The PowerPoint presentations summarizes the case study findings and includes visualizations and actionable recommendations.  
 
-[View the PowerPoint Presentation](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Presentation.pptx)
+1. [View the PowerPoint Presentation](https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Complete_Presentation%20(Orange)(1).pptx)
+
+
+2. [View the PowerPoint Presentation]https://github.com/sulay01/Bellabeat_case_study/blob/main/Bellabeat_Case_Study_Presentation_%20(2).pptx
+
+
 
 ---
 
