@@ -754,6 +754,14 @@ By using the wellnees tracker bellabeat can gather data to know their user's beh
 - They can inform their users if they are sitting long time by checking the step counter if it havent moved for specific amount of time and giving them notification on the app so they would know that they should be more active and get up.
 - Letting them know that the day is almost ending if they haven't done their average steps for the day.
 - showing the user's their intensity counter and setting a goal for them to achive it daily.
-- Doing competitions on the app for example for hitting a max intensity or max steps and giving them a specific gift or just making it to creat a motivational environment for them to achieve what they need. Credits to findings to help with this case study as well goes to Karenel Shimi. Thank you hope you enjoyed these 3 case Studies and hope it adds value to Bellabeats ! 
+- Doing competitions on the app for example for hitting a max intensity or max steps and giving them a specific gift or just making it to creat a motivational environment for them to achieve what they need. Credits to findings to help with this case study as well goes to Karemel Shimi. Thank you hope you enjoyed these 3 case Studies and hope it adds value to Bellabeats ! 
+
+
+
+### Not only did I like Karemels findings and case study but,  I also liked many others- I truly see that many has giving their all to complete this study here is another case study for Bellabeat that I would like to share 
+[here](https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study.git
+).
+
+
 
 ## The END :)
