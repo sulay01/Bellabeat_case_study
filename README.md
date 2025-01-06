@@ -191,7 +191,7 @@ This chart highlights the positive correlation between total steps taken and cal
 
 This visualization shows an inverse relationship between sedentary minutes and very active minutes, emphasizing the need for users to reduce sedentary time to improve overall health.
 
-![[https://github.com/sulay01/Bellabeat_case_study/blob/main/Sedentary%20Minutes%20vs%20Very%20Active%20Minutes%20(Filtered).pdf]
+(https://github.com/sulay01/Bellabeat_case_study/blob/main/Sedentary%20Minutes%20vs%20Very%20Active%20Minutes%20(Filtered).pdf)
 
 - Users with high sedentary minutes tend to have fewer very active minutes.
 - Features like "move reminders" or gamification can encourage users to stay active throughout the day.
