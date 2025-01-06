@@ -217,7 +217,7 @@ The PowerPoint presentation summarizes the case study findings and includes visu
 
 ---
 
-###  I like Karemels findings and case study but,  I did liked many other studies, provided their findings and analhysis below- I truly see that many has giving their all to complete this study here is another case study for Bellabeat that I am sharing below:
+###  I like Karemels findings and case study and many others. I truly see that many has giving their all to complete this case study here is a case study for Bellabeat that I am sharing below:
 
 
 ---
@@ -623,7 +623,7 @@ By using the wellnees tracker bellabeat can gather data to know their user's beh
 ---
 
 
-### Not only did I like Karemels findings and case study but,  I also liked many other case studies , one being xgabrielex provided their findings and analhysis below- I truly see that many has giving their all to complete this study here is another case study for Bellabeat that I am sharing below:
+### Not only did I like Karemels findings and case study but,  I also liked many other case studies , one being xgabrielex who provided their findings and analysis below:
 
 
 ---
