@@ -178,7 +178,7 @@ Bellabeat-Case-Study/
 
 This chart highlights the positive correlation between total steps taken and calories burned. Users who are more active consistently burn more calories.
 
-![Steps vs Calories](outputs/steps_vs_calories.png)
+(https://github.com/sulay01/Bellabeat_case_study/blob/main/Total%20Steps%20vs%20Calories%20Burned.pdf)
 
 **Explanation**:
 
