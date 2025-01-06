@@ -204,7 +204,7 @@ This visualization shows an inverse relationship between sedentary minutes and v
 
 This line graph captures daily trends in total steps, calories burned, sedentary minutes, and very active minutes, providing insights into user behavior over time.
 
-![Daily Trends in Activity](outputs/daily_trends.png)
+(https://github.com/sulay01/Bellabeat_case_study/blob/main/Daily%20Trends%20Steps%20and%20Calories%20.pdf)
 
 **Explanation**:
 
