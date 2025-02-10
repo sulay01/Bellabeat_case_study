@@ -1288,7 +1288,7 @@ As I've learned from data analysis, the most active hours of the day are 12 PM t
 
 User data suggest that people are not getting enough sleep and having a harder time falling asleep. To try and solve this issue Bellabeat app could have an "Evening meditation" integration which would recommend users a 5-minute meditation before sleep. This could potentially help users fall asleep and get the recommended 7-9 hours of sleep per day.
 
-### **Recourses**
+### **Resourses**
 
 * FitBit Fitness Tracker Data (https://www.kaggle.com/datasets/arashnic/fitbit)
   
